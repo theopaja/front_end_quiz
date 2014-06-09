@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa271107-4086-4eff-8585-1a7c8f8dabb8" name="Default" comment="" />
+    <list default="true" id="aa271107-4086-4eff-8585-1a7c8f8dabb8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="express_example.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +30,7 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1095">
+            <state line="10" column="39" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
               <folding />
             </state>
           </provider>
@@ -44,28 +48,25 @@
       <file leaf-file-name="Item.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/models/Item.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="32" selection-start="586" selection-end="595" vertical-scroll-proportion="-7.352941" vertical-offset="0" max-vertical-offset="480">
-              <folding>
-                <marker date="1402093064000" expanded="true" signature="56:598" placeholder="{...}" />
-                <marker date="1402093064000" expanded="true" signature="101:559" placeholder="{&quot;url&quot;: '/item.json'...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Item.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/js/views/Item.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="28" selection-start="146" selection-end="146" vertical-scroll-proportion="0.1589404" vertical-offset="0" max-vertical-offset="2595">
+            <state line="25" column="32" selection-start="586" selection-end="595" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form_template.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Item.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/views/Item.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="13" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2595">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form_template.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/form_template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="10" selection-start="325" selection-end="325" vertical-scroll-proportion="-6.521739" vertical-offset="0" max-vertical-offset="1995">
+            <state line="18" column="49" selection-start="804" selection-end="804" vertical-scroll-proportion="0.3846154" vertical-offset="0" max-vertical-offset="1995">
               <folding>
                 <marker date="1402092684000" expanded="true" signature="908:1560" placeholder="..." />
                 <marker date="1402092684000" expanded="true" signature="963:1541" placeholder="..." />
@@ -97,6 +98,14 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -108,17 +117,18 @@
         <option value="$PROJECT_DIR$/views/form_template.html" />
         <option value="$PROJECT_DIR$/public/js/models/Item.js" />
         <option value="$PROJECT_DIR$/public/js/views/Item.js" />
+        <option value="$PROJECT_DIR$/public/js/views/entry.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="794" />
-    <option name="y" value="39" />
+    <option name="x" value="838" />
+    <option name="y" value="90" />
     <option name="width" value="1055" />
-    <option name="height" value="878" />
+    <option name="height" value="861" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -144,6 +154,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -250,17 +261,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.sourceCode.General" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/stylesheet.css" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -311,13 +321,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="794" y="39" width="1055" height="878" extended-state="0" />
+    <frame x="838" y="90" width="1055" height="861" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26824644" sideWeight="0.6704981" order="0" side_tool="false" content_ui="combo" />
@@ -329,6 +338,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -346,13 +356,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="766" selection-end="766" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1005">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/error.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180" />
@@ -365,9 +368,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/underscore-express/underscore-express.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/underscore-express/README.md">
@@ -397,11 +398,14 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="345" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/jade/node_modules/monocle/node_modules/readdirp/node_modules/minimatch/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1095">
-          <folding />
-        </state>
+        <state line="22" column="23" selection-start="474" selection-end="474" vertical-scroll-proportion="0.4589708" vertical-offset="0" max-vertical-offset="719" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="1" selection-start="64" selection-end="64" vertical-scroll-proportion="0.059602648" vertical-offset="0" max-vertical-offset="755" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
@@ -411,33 +415,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/jade/node_modules/monocle/node_modules/readdirp/node_modules/minimatch/package.json">
+    <entry file="file://$PROJECT_DIR$/public/js/models/Item.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="23" selection-start="474" selection-end="474" vertical-scroll-proportion="0.4589708" vertical-offset="0" max-vertical-offset="719">
+        <state line="25" column="32" selection-start="586" selection-end="595" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/models/Item.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="32" selection-start="586" selection-end="595" vertical-scroll-proportion="-7.352941" vertical-offset="0" max-vertical-offset="480">
-          <folding>
-            <marker date="1402093064000" expanded="true" signature="56:598" placeholder="{...}" />
-            <marker date="1402093064000" expanded="true" signature="101:559" placeholder="{&quot;url&quot;: '/item.json'...}" />
-          </folding>
+        <state line="10" column="39" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheet.css">
+    <entry file="file://$PROJECT_DIR$/public/js/views/Item.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="1" selection-start="64" selection-end="64" vertical-scroll-proportion="0.059602648" vertical-offset="0" max-vertical-offset="755">
+        <state line="3" column="13" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2595">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/form_template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="10" selection-start="325" selection-end="325" vertical-scroll-proportion="-6.521739" vertical-offset="0" max-vertical-offset="1995">
+        <state line="18" column="49" selection-start="804" selection-end="804" vertical-scroll-proportion="0.3846154" vertical-offset="0" max-vertical-offset="1995">
           <folding>
             <marker date="1402092684000" expanded="true" signature="908:1560" placeholder="..." />
             <marker date="1402092684000" expanded="true" signature="963:1541" placeholder="..." />
@@ -458,13 +459,6 @@
             <marker date="1402092684000" expanded="true" signature="5665:5887" placeholder="..." />
             <marker date="1402092684000" expanded="true" signature="5763:5868" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/views/Item.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="28" selection-start="146" selection-end="146" vertical-scroll-proportion="0.1589404" vertical-offset="0" max-vertical-offset="2595">
-          <folding />
         </state>
       </provider>
     </entry>
