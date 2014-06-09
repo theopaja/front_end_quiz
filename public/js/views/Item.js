@@ -1,0 +1,168 @@
+/**
+ * Created by theodora on 6/3/14.
+ */
+(function() {
+
+
+    window.app = {
+        baseView: Backbone.View.extend({
+            el: '#container'
+        })
+    }
+
+    ////
+
+    var SomeView = app.baseView.extend({
+
+    });
+
+
+    var ItemView = Backbone.View.extend({
+        el: '#container',
+
+        events: {
+            'click button[type=button]': 'saveButton',
+            'change [name=inputTexts]': 'changeText',
+            'change [data-materiallist=materiallist]': 'changeMaterial',
+            'click input[type=checkbox]': 'check',
+            'change [name=unit]': 'changeUnit',
+            'change [name=shape]': 'changeShape',
+            'change [name=measure]': 'changeMeasurements',
+            'change .condition': 'changeConditions'
+        },
+
+        saveButton: function () {
+            this.model.save();
+        },
+
+        changeText: function ( event ) {
+            var target = event.currentTarget;
+            if (target.dataset.title && target.value) {
+                this.update(target.dataset.title, target.value);
+            }
+        },
+
+        changeMaterial: function( event ) {
+            var item = this.model.get('material');
+            var target = event.currentTarget.value;
+            if (item && target) {
+                item.description = target;
+                this.update('material', item);
+                this.$('#dropdownText').html(target);
+            }
+        },
+
+        check: function ( event ) {
+            //Updates checkbox
+            var item = this.model.get('material');
+            if (item) {
+                item.restricted = event.currentTarget.checked ? 'Y' : 'N';
+                this.update('material', item);
+            }
+        },
+
+        changeUnit: function ( event ) {
+            var item = this.model.get('measurement');
+            var target = event.currentTarget.dataset.unit;
+            if (item && target) {
+                //Update model
+                item.unit = target;
+                this.update('measurement', item);
+                //Update HTML to show new units
+                this.$('span.input-group-addon').html(target);
+            }
+        },
+
+        changeShape: function ( event ) {
+            //Update model shape
+            var item = this.model.get('measurement');
+            var $target= $(event.currentTarget);
+            var data = $target.data('shape');
+            if (item && data) {
+                item.shape = data;
+                this.update('measurement', item);
+            }
+            //Enable measurements
+            this.$('[name=measure]').removeAttr('disabled');
+        },
+
+        changeMeasurements: function( event ) {
+            var item = this.model.get('measurement');
+            var target = event.currentTarget;
+            var data = (target.dataset.dimen || '').toLowerCase();
+            if (item[data]) {
+                item[data] = target.value;
+                this.update('measurement', item);
+            }
+        },
+
+        changeConditions: function( event ) {
+            var target = event.currentTarget.dataset.condition;
+            if (target) {
+                this.update('condition', target);
+            }
+        },
+
+        initialize: function (options) {
+            this.options = options || {};
+
+            this.model.fetch();
+
+            if (this.options.enums) {
+                this.enums = this.options.enums;
+            } else {
+                this.enums = {
+                    material: ["Wood", "Metal", "Ceramic", "Glass", "Leather"],
+                    measurement: {
+                        unit: {
+                            in: "inches",
+                            cm: "centimeters"
+                        },
+                        shape: ["Rectangular", "Circular"]
+                    },
+                    condition: {
+                        description: ["Distressed", "Fair", "Good", "Excellent"]
+                    }
+                }
+            }
+
+            _.templateSettings.variable = 'obj';
+
+            this.templates = {
+                textinputs: _.template($('#tmplTextInput').html()),
+                materials: _.template($('#tmplMaterials').html()),
+                measurements: _.template($('#tmplMeasurements').html()),
+                conditions: _.template($('#tmplConditions').html())
+            };
+
+            this.render();
+            this.$('#radioInches').prop('checked', true);
+            this.$('#radioGood').prop('checked', true);
+        },
+
+        render: function () {
+            var templateData = {
+                title: 'Title',
+                enums: this.enums,
+                dimen: ['Length', 'Depth', 'Height', 'Diameter']
+            };
+
+            for (var i in this.templates) {
+                this.$el.append(this.templates[i](templateData));
+            }
+
+            return this;
+        },
+
+        update: function( key , value) {
+            this.model.set( key, value );
+        }
+
+    });
+
+    $(function () {
+        var itemView = new ItemView({
+            model: new ItemModel()
+        });
+    });
+}());
