@@ -16,6 +16,7 @@ var app = express();
 //Added
 app.engine('html', consolidate.mustache);
 app.set('view engine', 'html');
+//require('!style!css./public/stylesheet.css');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

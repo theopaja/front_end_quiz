@@ -2,7 +2,7 @@
  * Created by theodora on 6/3/14.
  */
 
-(function () {
+//(function () {
 
     var ItemModel = Backbone.Model.extend({
         url: '/item.json',
@@ -23,5 +23,11 @@
         }
     });
 
-    window.ItemModel = ItemModel;
-}());
+/*exports.item = function() {
+    console.log('Created model');
+    return new ItemModel();
+};*/
+module.exports = ItemModel;
+
+//    window.ItemModel = ItemModel;
+//}());
