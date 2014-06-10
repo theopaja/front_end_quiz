@@ -140,6 +140,9 @@ var ItemView = Backbone.View.extend({
         }
         //Enable measurements
         this.$('[name=measure]').removeAttr('disabled');
+        if(data !== 'Circular') {
+            this.$('#formDiameter').attr('disabled',true);
+        }
     },
 
     changeMeasurements: function( event ) {
