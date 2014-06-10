@@ -14,11 +14,9 @@ var SomeView = app.baseView.extend({
 });
 */
 
-
-//require('../../bootstrap/js/bootstrap.min');
-//require('../backbone');
-
-//var ItemModel = require('../models/Item');
+var $ = require('../jquery');
+var _ = require('../underscore');
+var Backbone = require('../backbone');
 
 var ItemView = Backbone.View.extend({
     el: '#container',
@@ -32,78 +30,6 @@ var ItemView = Backbone.View.extend({
         'change [name=shape]': 'changeShape',
         'change [name=measure]': 'changeMeasurements',
         'change .condition': 'changeConditions'
-    },
-
-    saveButton: function () {
-        this.model.save();
-    },
-
-    changeText: function ( event ) {
-        var target = event.currentTarget;
-        if (target.dataset.title && target.value) {
-            this.update(target.dataset.title, target.value);
-        }
-    },
-
-    changeMaterial: function( event ) {
-        var item = this.model.get('material');
-        var target = event.currentTarget.value;
-        if (item && target) {
-            item.description = target;
-            this.update('material', item);
-            this.$('#dropdownText').html(target);
-        }
-    },
-
-    check: function ( event ) {
-        //Updates checkbox
-        var item = this.model.get('material');
-        if (item) {
-            item.restricted = event.currentTarget.checked ? 'Y' : 'N';
-            this.update('material', item);
-        }
-    },
-
-    changeUnit: function ( event ) {
-        var item = this.model.get('measurement');
-        var target = event.currentTarget.dataset.unit;
-        if (item && target) {
-            //Update model
-            item.unit = target;
-            this.update('measurement', item);
-            //Update HTML to show new units
-            this.$('span.input-group-addon').html(target);
-        }
-    },
-
-    changeShape: function ( event ) {
-        //Update model shape
-        var item = this.model.get('measurement');
-        var $target= $(event.currentTarget);
-        var data = $target.data('shape');
-        if (item && data) {
-            item.shape = data;
-            this.update('measurement', item);
-        }
-        //Enable measurements
-        this.$('[name=measure]').removeAttr('disabled');
-    },
-
-    changeMeasurements: function( event ) {
-        var item = this.model.get('measurement');
-        var target = event.currentTarget;
-        var data = (target.dataset.dimen || '').toLowerCase();
-        if (item[data]) {
-            item[data] = target.value;
-            this.update('measurement', item);
-        }
-    },
-
-    changeConditions: function( event ) {
-        var target = event.currentTarget.dataset.condition;
-        if (target) {
-            this.update('condition', target);
-        }
     },
 
     initialize: function (options) {
@@ -157,6 +83,83 @@ var ItemView = Backbone.View.extend({
         return this;
     },
 
+    saveButton: function () {
+        this.model.save();
+    },
+
+    changeText: function ( event ) {
+        var $target = $(event.currentTarget);
+        var data = $target.data('title');
+        var val = $target.val();
+        if (data && val) {
+            this.update(data, val);
+        }
+    },
+
+    changeMaterial: function( event ) {
+        var item = this.model.get('material');
+        var $target = $(event.currentTarget);
+        var data = $target.val();
+        if (item && data) {
+            item.description = data;
+            this.update('material', item);
+            this.$('#dropdownText').html(data);
+        }
+    },
+
+    check: function ( event ) {
+        //Updates checkbox
+        var item = this.model.get('material');
+        if (item) {
+            item.restricted = event.currentTarget.checked ? 'Y' : 'N';
+            this.update('material', item);
+        }
+    },
+
+    changeUnit: function ( event ) {
+        var item = this.model.get('measurement');
+        var $target = $(event.currentTarget);
+        var data = $target.data('unit');
+        if (item && data) {
+            //Update model
+            item.unit = data;
+            this.update('measurement', item);
+            //Update HTML to show new units
+            this.$('span.input-group-addon').html(data);
+        }
+    },
+
+    changeShape: function ( event ) {
+        //Update model shape
+        var item = this.model.get('measurement');
+        var $target= $(event.currentTarget);
+        var data = $target.data('shape');
+        if (item && data) {
+            item.shape = data;
+            this.update('measurement', item);
+        }
+        //Enable measurements
+        this.$('[name=measure]').removeAttr('disabled');
+    },
+
+    changeMeasurements: function( event ) {
+        var item = this.model.get('measurement');
+        var $target = $(event.currentTarget);
+        var data = ($target.data('dimen') || '').toLowerCase();
+        if (item && data) {
+            item[data] = $target.val();
+            this.update('measurement', item);
+        }
+    },
+
+    changeConditions: function( event ) {
+        var $target = $(event.currentTarget);
+        var data = $target.data('condition');
+        if (data) {
+            this.update('condition', data);
+        }
+    },
+
     update: function( key , value) {
         this.model.set( key, value );
     }
@@ -164,28 +167,3 @@ var ItemView = Backbone.View.extend({
 });
 
 module.exports = ItemView;
-
-/*
-$(function () {
-    var itemView = new ItemView({
-        model: new ItemModel()
-    });
-});
-*/
-
-/*
-var makeView = function () {
-    var itemView = new ItemView({
-        model: new ItemModel()
-    });
-    return itemView;
-};
-module.exports = makeView;
-*/
-
-/*
-module.exports = function() {
-    return new ItemView({
-       model: new ItemModel()
-    });
-}*/
