@@ -36,4 +36,25 @@ router.get('/item.json', function(req,res) {
     });
 });
 
+router.get('/enums.json', function(req,res) {
+    res.set('Content-Type', 'application/json');
+    res.json(200, {
+        "itemEnums": {
+            "material": ["Wood", "Metal", "Ceramic", "Glass", "Leather"],
+
+                "measurement": {
+                "unit": {
+                    "in": "inches",
+                        "cm": "centimeters"
+                },
+                "shape": ["Rectangular", "Circular"]
+            },
+
+            "condition": {
+                "description": ["Distressed", "Fair", "Good", "Excellent"]
+            }
+        }
+    });
+});
+
 module.exports = router;

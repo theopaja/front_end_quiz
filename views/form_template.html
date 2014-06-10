@@ -44,7 +44,9 @@
                         </select>
                     </div>
 
-                    <br><br><input type="checkbox"><strong>  Check this box</strong> if the listing contains or may contain restricted material
+                    <br><br>
+                    <input type="checkbox">
+                    <strong>  Check this box</strong> if the listing contains or may contain restricted material
 
                 </div>
             </div>
@@ -76,13 +78,14 @@
 
                     <div class="row">
                         <br>
-                        <!--Adds in Dimentions-->
+                        <!--Adds in Dimensions-->
                         <%for (var i = 0; i < obj.dimen.length; i++ ) { %>
                         <div class="col-sm-6">
                             <div id="measurements">
                                 <label><strong> <%= obj.dimen[i] %>: </strong></label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="measure" data-dimen="<%= obj.dimen[i] %>" disabled>
+                                    <input type="text" class="form-control" name="measure" id="form<%=obj.dimen[i]%>"
+                                           data-dimen="<%= obj.dimen[i] %>" disabled>
                                     <span class="input-group-addon"> in </span>
                                 </div>
                             </div>

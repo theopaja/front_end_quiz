@@ -87,80 +87,190 @@ var ItemView = Backbone.View.extend({
         this.model.save();
     },
 
+    changeModel: function (index, $target, dataval) {
+        var item = this.model.get(index);   //Current model
+        var val = $target.val();            //DOM element value
+        var data = $target.data(dataval);   //DOM element data
+
+        switch (index) {
+            //Text boxes (Title, Description, Notes)
+            case 'title':
+                if (data && val) {
+                    this.updateModel(data, val);
+                }
+                break;
+            //Materials
+            case 'material':
+                switch (dataval) {
+                    //Material type/description
+                    case 'description':
+                        if (item && val) {
+                            item.description = val;
+                            this.updateModel(index, item);
+                            this.$('#dropdownText').html(val);
+                        }
+                        break;
+                    //Restriction checkbox
+                    case 'restricted':
+                        if (item) {
+                            var checked = $target.prop('checked');
+                            if (item) {
+                                item.restricted = checked ? 'Y' : 'N';
+                                this.updateModel(index, item);
+                            }
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            //Measurements
+            case 'measurement':
+                switch (dataval) {
+                    //Unit of measurement
+                    case 'unit':
+                        if (item && data) {
+                            //Update model
+                            item.unit = data;
+                            this.updateModel(index, item);
+                            //Update HTML to show new units
+                            this.$('span.input-group-addon').html(data);
+                        }
+                        break;
+                    //Shape of object
+                    case 'shape':
+                        if (item && data) {
+                            item.shape = data;
+                            this.updateModel(index, item);
+                        }
+                        //Enable measurements
+                        this.$('[name=measure]').removeAttr('disabled');
+                        break;
+                    //Dimensions
+                    case 'dimen':
+                        if (item && data.toLowerCase()) {
+                            item[data.toLowerCase()] = val;
+                            this.updateModel(index, item);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                break;
+            //Conditions
+            case 'condition':
+                if (item && data) {
+                    item.description = data;
+                    this.updateModel(index, item);
+                }
+                break;
+
+            default:
+                break;
+        }
+    },
+
     changeText: function ( event ) {
+        this.changeModel('title', $(event.currentTarget), 'title');
+/*
         var $target = $(event.currentTarget);
         var data = $target.data('title');
         var val = $target.val();
         if (data && val) {
-            this.update(data, val);
+            this.updateModel(data, val);
         }
+*/
     },
 
     changeMaterial: function( event ) {
+        this.changeModel('material', $(event.currentTarget), 'description');
+/*
         var item = this.model.get('material');
         var $target = $(event.currentTarget);
-        var data = $target.val();
-        if (item && data) {
-            item.description = data;
-            this.update('material', item);
-            this.$('#dropdownText').html(data);
+        var val = $target.val();
+        if (item && val) {
+            item.description = val;
+            this.updateModel('material', item);
+            this.$('#dropdownText').html(val);
         }
+*/
     },
 
     check: function ( event ) {
+        this.changeModel('material', $(event.currentTarget), 'restricted');
         //Updates checkbox
+/*
         var item = this.model.get('material');
+        var $target = $(event.currentTarget);
+        var checked = $target.prop('checked');
         if (item) {
-            item.restricted = event.currentTarget.checked ? 'Y' : 'N';
-            this.update('material', item);
+            item.restricted = checked ? 'Y' : 'N';
+            this.updateModel('material', item);
         }
+*/
     },
 
     changeUnit: function ( event ) {
+        this.changeModel('measurement', $(event.currentTarget), 'unit');
+/*
         var item = this.model.get('measurement');
         var $target = $(event.currentTarget);
         var data = $target.data('unit');
         if (item && data) {
             //Update model
             item.unit = data;
-            this.update('measurement', item);
+            this.updateModel('measurement', item);
             //Update HTML to show new units
             this.$('span.input-group-addon').html(data);
         }
+*/
     },
 
     changeShape: function ( event ) {
+        this.changeModel('measurement', $(event.currentTarget), 'shape');
+/*
         //Update model shape
         var item = this.model.get('measurement');
         var $target= $(event.currentTarget);
         var data = $target.data('shape');
         if (item && data) {
             item.shape = data;
-            this.update('measurement', item);
+            this.updateModel('measurement', item);
         }
         //Enable measurements
         this.$('[name=measure]').removeAttr('disabled');
+*/
     },
 
     changeMeasurements: function( event ) {
+        this.changeModel('measurement', $(event.currentTarget), 'dimen');
+/*
         var item = this.model.get('measurement');
         var $target = $(event.currentTarget);
         var data = ($target.data('dimen') || '').toLowerCase();
+        var val = $target.val();
         if (item && data) {
-            item[data] = $target.val();
-            this.update('measurement', item);
+            item[data] = val;
+            this.updateModel('measurement', item);
         }
+*/
     },
 
     changeConditions: function( event ) {
+        this.changeModel('condition', $(event.currentTarget), 'condition');
+/*
+        var item = this.model.get('condition');
         var $target = $(event.currentTarget);
         var data = $target.data('condition');
-        if (data) {
-            this.update('condition', data);
+        if (item && data) {
+            item.description = data;
+            this.updateModel('condition', item);
         }
+*/
     },
 
-    update: function( key , value) {
+    updateModel: function( key , value) {
         this.model.set( key, value );
     }
 
