@@ -4,19 +4,13 @@
 		<title>1stdibs Form</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Bootstrap -->
-		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="stylesheet.css" rel="stylesheet" type="text/css">
 	</head>
 
     <body>
         <div id="container"></div>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
-        <script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
-        <script src="/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/js/models/Item.js"></script>
-        <script src="/js/views/Item.js"></script>
+        <script src="bundle.js"></script>
 
         <script type="text/template" class="template" id="tmplTextInput">
             <div class="row">
@@ -63,7 +57,7 @@
                     <p><strong>Measurements</strong></p>
                     <div>
                         <!--Adds in Units options-->
-                        <p class="inlinepadding">Measurements are in:</p>
+                        <p class="inline-padding">Measurements are in:</p>
                         <%for(var i in obj.enums.measurement.unit) { %>
                             <% var attr = obj.enums.measurement.unit[i];%>
                             <% var cap = attr.charAt(0).toUpperCase() + attr.substr(1, attr.length) %>
@@ -73,7 +67,7 @@
                     </div>
                     <div>
                         <!--Adds in Shapes options-->
-                        <p class="inlinepadding"">Measured item is:</p>
+                        <p class="inline-padding"">Measured item is:</p>
                         <%for(var i = 0; i < obj.enums.measurement.shape.length; i++) { %>
                         <% var shape = obj.enums.measurement.shape[i];%>
                         <input type="radio" name="shape" data-shape="<%= shape %>" id="radio<%= shape %>"> <%= shape %>
@@ -106,7 +100,7 @@
                     <br>
                     <!--Adds Condition options-->
                     <p><strong>Condition</strong><em> ( Select One ) </em></p>
-                    <div class="inlinepadding">
+                    <div class="inline-padding">
                         <% for (var i = 0; i < obj.enums.condition.description.length; i++){ %>
                         <% var x = obj.enums.condition.description[i]%>
                             <input type="radio" name="cond" class="condition" data-condition="<%=x%>" id="radio<%= x %>"> <%= x %>
