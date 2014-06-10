@@ -2,7 +2,7 @@ front_end_quiz
 ==============
 To run:
 
-1. Install npm
+1. Install node dependencies with npm
 
     $ npm install
 2. Install webpack globally:
