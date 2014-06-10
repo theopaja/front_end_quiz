@@ -16,6 +16,8 @@ To run:
     $ npm start
 5. Open http://localhost:3000/
 
+Some notes:
+
 -The save button dumps the edited/updated item.json to the console
 
 -Dimensions are disabled until a shape is selected
