@@ -105,7 +105,7 @@ var ItemView = Backbone.View.extend({
                     //Material type/description
                     case 'description':
                         if (item && val) {
-                            item.description = val;
+                            item[dataval] = val;
                             this.updateModel(index, item);
                             this.$('#dropdownText').html(val);
                         }
@@ -114,10 +114,8 @@ var ItemView = Backbone.View.extend({
                     case 'restricted':
                         if (item) {
                             var checked = $target.prop('checked');
-                            if (item) {
-                                item.restricted = checked ? 'Y' : 'N';
-                                this.updateModel(index, item);
-                            }
+                            item[dataval] = checked ? 'Y' : 'N';
+                            this.updateModel(index, item);
                         }
                         break;
                     default:
@@ -131,7 +129,7 @@ var ItemView = Backbone.View.extend({
                     case 'unit':
                         if (item && data) {
                             //Update model
-                            item.unit = data;
+                            item[dataval] = data;
                             this.updateModel(index, item);
                             //Update HTML to show new units
                             this.$('span.input-group-addon').html(data);
@@ -139,12 +137,17 @@ var ItemView = Backbone.View.extend({
                         break;
                     //Shape of object
                     case 'shape':
-                        if (item && data) {
-                            item.shape = data;
-                            this.updateModel(index, item);
-                        }
                         //Enable measurements
                         this.$('[name=measure]').removeAttr('disabled');
+                        if(data !== 'Circular') {
+                            this.$('#formDiameter').attr('disabled',true);
+
+                        }
+                        //Update Model
+                        if (item && data) {
+                            item[dataval] = data;
+                            this.updateModel(index, item);
+                        }
                         break;
                     //Dimensions
                     case 'dimen':
