@@ -1,19 +1,6 @@
 /**
  * Created by theodora on 6/3/14.
  */
-/*window.app = {
-    baseView: Backbone.View.extend({
-        el: '#container'
-    })
-}
-
-////
-
-var SomeView = app.baseView.extend({
-
-});
-*/
-
 var $ = require('../jquery');
 var _ = require('../underscore');
 var Backbone = require('../backbone');
